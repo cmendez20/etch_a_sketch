@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 720px;
+  outline: #333 10px solid;
+  /* border: 5px solid #333; */
+}
+
+.grid_cell {
+  /* outline: black 1px solid; */
+  width: 45px;
+  height: 45px;
+}
+
+.hover {
+  background-color: burlywood;
+}
