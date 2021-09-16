@@ -25,10 +25,16 @@ container.addEventListener('mouseover', e => {
   }
 });
 
-drawBtn.addEventListener('click', () => (draw = true));
+drawBtn.addEventListener('click', () => {
+  draw = true;
+  drawBtn.classList.add('btn--active');
+  eraseBtn.classList.remove('btn--active');
+});
 
 eraseBtn.addEventListener('click', () => {
   draw = false;
+  eraseBtn.classList.add('btn--active');
+  drawBtn.classList.remove('btn--active');
   container.addEventListener('mouseover', e => {
     if (e.target.classList.contains('hover') && !draw) {
       e.target.classList.remove('hover');
@@ -37,6 +43,9 @@ eraseBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () => {
+  // resetBtn.classList.toggle('btn--active');
+  eraseBtn.classList.remove('btn--active');
+  drawBtn.classList.add('btn--active');
   const pixels = document.querySelectorAll('.hover');
   pixels.forEach(pixel => {
     pixel.classList.remove('hover');

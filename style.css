@@ -35,6 +35,21 @@ body {
 
 .btn {
   padding: 7.5px 20px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  border: 3px solid #555;
+  /* transition: transform 0.1s ease-in-out; */
+  transition: transform ease-in-out 0.15s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btn--active {
+  background-color: #555;
+  color: white;
 }
 
 .container {
