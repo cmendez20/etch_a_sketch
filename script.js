@@ -1,5 +1,8 @@
 const container = document.querySelector('.container');
+const drawBtn = document.querySelector('.btn__draw');
+const eraseBtn = document.querySelector('.btn__eraser');
 const resetBtn = document.querySelector('.btn__reset');
+let draw = true;
 
 const addGrid = () => {
   for (i = 0; i <= 255; i++) {
@@ -17,15 +20,26 @@ const addGrid = () => {
 document.body.onload = addGrid;
 
 container.addEventListener('mouseover', e => {
-  console.log(e.target);
-  if (e.target.className === 'grid__cell') {
+  if (e.target.className === 'grid__cell' && draw) {
     e.target.classList.add('hover');
   }
 });
 
-resetBtn.addEventListener('click', () => {
-  const grid = document.querySelectorAll('.grid__cell');
-  grid.forEach(cell => {
-    cell.classList.remove('hover');
+drawBtn.addEventListener('click', () => (draw = true));
+
+eraseBtn.addEventListener('click', () => {
+  draw = false;
+  container.addEventListener('mouseover', e => {
+    if (e.target.classList.contains('hover') && !draw) {
+      e.target.classList.remove('hover');
+    }
   });
+});
+
+resetBtn.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.hover');
+  pixels.forEach(pixel => {
+    pixel.classList.remove('hover');
+  });
+  draw = true;
 });
