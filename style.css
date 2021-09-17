@@ -53,20 +53,24 @@ body {
 }
 
 .container {
-  /* margin: 0 auto; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
   flex-wrap: wrap;
   max-width: 720px;
+  max-height: 720px;
   outline: #333 10px solid;
   /* border: 5px solid #333; */
 }
 
-.grid__cell {
-  /* outline: black 1px solid; */
-  width: 45px;
-  height: 45px;
+.grid__square {
+  /* padding: 21.5px; */
+  border: 1px solid #333;
+  /* outline: #333 solid 1px; */
+  /* flex: 1; */
+  /* width: 45px; */
+  /* height: 45px; */
 }
 
 .hover {
