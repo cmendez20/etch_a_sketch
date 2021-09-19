@@ -6,6 +6,12 @@
   box-sizing: inherit;
 }
 
+:root {
+  --color-black: #334;
+  --color-white: whitesmoke;
+  --color-accent: burlywood;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -15,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 #title {
@@ -37,40 +43,37 @@ body {
   padding: 7.5px 20px;
   background-color: whitesmoke;
   border-radius: 5px;
-  border: 3px solid #555;
-  /* transition: transform 0.1s ease-in-out; */
+  border: 3px solid var(--color-black);
   transition: transform ease-in-out 0.15s;
 }
 
 .btn:hover {
   transform: scale(1.1);
   cursor: pointer;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .btn--active {
-  background-color: #555;
-  color: white;
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: bold;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* flex-wrap: wrap; */
-  max-width: 720px;
-  max-height: 720px;
-  outline: #333 10px solid;
-  /* border: 5px solid #333; */
+  max-width: 100%;
+  /* width: 100%; */
+  /* max-height: 720px; */
+  outline: var(--color-black) 10px solid;
 }
 
 .grid__square {
-  /* padding: 21.5px; */
-  border: 1px solid #333;
-  /* outline: #333 solid 1px; */
-  /* flex: 1; */
-  /* width: 45px; */
-  /* height: 45px; */
+  border: 1px solid var(--color-black);
 }
 
 .hover {
-  background-color: burlywood;
+  background-color: var(--color-accent);
 }

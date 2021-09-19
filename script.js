@@ -17,7 +17,7 @@ const createGrid = size => {
 
     // add to OG DIV in HTML
     container.append(square);
-    console.log('CREATING GRID', performance.now());
+    // console.log('CREATING GRID', performance.now());
   }
   container.addEventListener('mouseover', colorSquare);
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -29,22 +29,22 @@ const clearGrid = () => {
 
   while (container.firstChild) {
     container.removeChild(container.firstChild);
-    console.log('CLEARING GRID WHILE LOOP', performance.now());
+    // console.log('CLEARING GRID WHILE LOOP', performance.now());
   }
-  console.log('CLEARING GRID END', performance.now());
+  // console.log('CLEARING GRID END', performance.now());
 };
 
 const colorSquare = e => {
   if (e.target.className === 'grid__square' && draw) {
     e.target.classList.add('hover');
   }
-  console.log('HOVER', performance.now());
+  // console.log('HOVER', performance.now());
 };
 
 const removeSquare = e => {
   if (e.target.classList.contains('hover') && !draw) {
     e.target.classList.remove('hover');
-    console.log('REMOVE', performance.now());
+    // console.log('REMOVE', performance.now());
   }
 };
 
@@ -65,7 +65,6 @@ eraseBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-  // resetBtn.classList.toggle('btn--active');
   eraseBtn.classList.remove('btn--active');
   drawBtn.classList.add('btn--active');
   const pixels = document.querySelectorAll('.hover');
