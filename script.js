@@ -20,6 +20,7 @@ const createGrid = size => {
     console.log('CREATING GRID', performance.now());
   }
   container.addEventListener('mouseover', colorSquare);
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 };
 
 const clearGrid = () => {
