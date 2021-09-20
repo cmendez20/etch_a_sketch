@@ -1,3 +1,3 @@
 # Etch a Sketch Project
 
-Created to practice using the DOM and DOM manipulation.
+Etch a sketch game created with HTML, CSS and JS. 
