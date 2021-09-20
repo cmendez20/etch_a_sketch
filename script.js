@@ -67,7 +67,6 @@ const changeActiveBtn = e => {
     console.log('here');
     eraseBtn.classList.remove('btn--active');
     rgbBtn.classList.remove('btn--active');
-    drawBtn.classList.add('btn--active');
   } else {
     buttons.forEach(btn => {
       if (btn.classList.contains('btn--active')) {
@@ -125,6 +124,9 @@ resetBtn.addEventListener('click', e => {
 
   // Create new grid with user's desired size.
   createGrid(size);
+
+  // Set active btn style to default draw mode
+  drawBtn.classList.add('btn--active');
 });
 
 document.body.onload = createGrid(size);
