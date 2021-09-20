@@ -39,15 +39,15 @@ const clearGrid = () => {
 const generateRandNum = () => Math.floor(Math.random() * 255);
 
 const drawSquare = e => {
-  if (e.target.className === 'grid__square' && draw) {
+  if (e.target.classList.contains('grid__square') && draw) {
     e.target.classList.add('hover');
-    e.target.style.backgroundColor = `burlywood`;
+    e.target.style.backgroundColor = `var(--color-black)`;
   }
   // console.log('HOVER', performance.now());
 };
 
 const colorSquare = e => {
-  if (e.target.className === 'grid__square' && draw) {
+  if (e.target.classList.contains('grid__square') && draw) {
     e.target.style.backgroundColor = `rgb(${generateRandNum()}, ${generateRandNum()}, ${generateRandNum()})`;
     e.target.classList.add('hover');
   }
@@ -80,6 +80,7 @@ const changeActiveBtn = e => {
 
 drawBtn.addEventListener('click', e => {
   container.removeEventListener('mouseover', removeSquare);
+  container.removeEventListener('mouseover', colorSquare);
   container.addEventListener('mouseover', drawSquare);
   draw = true;
   changeActiveBtn(e);
